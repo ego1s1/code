@@ -25,6 +25,18 @@ class Node{
 			next = nullptr;
 		}
 };
+int LLtoInt(Node* head){
+        Node* temp = head;
+        int n = 0, d = 0, f = 1;
+        while(temp){
+            d = temp->data;
+            n += f*d;
+            f *= 10;
+            temp = temp->next;
+        }
+        return n;
+    }
+
 Node* deleteTail(Node*head){
 	if(head == nullptr || head->next == nullptr) return nullptr;
 	Node* temp = head;
@@ -71,6 +83,21 @@ Node* convertArr2LL(vi &arr){
 	}
 	return head;
 }
+
+Node* intToLL(int n){
+        int d;
+        Node* head = new Node(n%10);
+        n/=10;
+        Node* mover = head;
+        while(n){
+            Node* temp = new Node(n%10);
+            n/=10;
+            mover -> next = temp;
+            mover = temp;
+        }
+        return head;
+    }
+
 Node* removeElement(Node* head, int element){
 	if(head->data == element){
 		Node* temp = head;
@@ -128,12 +155,12 @@ Node* insertEl(Node* head, int n, int num){
 void solve() {
 	vi arr = {2,3,4, 5,6,7,8};
 	Node* head = convertArr2LL(arr);
-	int k, pos;
-	cin >> k >> pos;
-	Node* temp = insertEl(head,k, pos); 
-	while(temp){
-		cout << temp->data << " ";
-		temp = temp->next;
+	int n = LLtoInt(head);
+	Node* out = intToLL(n);
+	cout << n << endl;
+	while(out){
+		cout << out->data << " ";
+		out = out->next;
 	}
 }
 int main() {
