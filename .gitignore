@@ -40,3 +40,6 @@ release/
 Thumbs.db
 *.log
 core 
+
+# I/O files
+*.txt

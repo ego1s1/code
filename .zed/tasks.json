@@ -1,0 +1,21 @@
+[
+  {
+    "label": "Compile and Run",
+    "command": "f=\"$ZED_FILE\"; b=$(basename \"$f\"); s=\"${b%.*}\"; g++ -std=c++17 -O2 \"$f\" -o \"$s\" 2> build_errors.log && ./$s < input.txt > output.txt",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+
+    // Don't steal focus when you run it
+    "reveal": "never",
+
+    // Hide the terminal automatically if everything succeeded
+    "hide": "on_success",
+
+    // Use your normal shell (zsh on macOS)
+    "shell": "system",
+
+    // Remove noise for CP-style workflow
+    "show_summary": false,
+    "show_command": false,
+  },
+]

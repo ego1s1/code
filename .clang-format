@@ -1,0 +1,21 @@
+BasedOnStyle: LLVM
+
+# Put { on the same line as functions, ifs, loops, etc.
+BreakBeforeBraces: Attach
+
+# Ensure functions don't get split weirdly
+AllowShortFunctionsOnASingleLine: Empty
+
+# Keep control statements clean
+AllowShortIfStatementsOnASingleLine: Never
+
+# Indentation
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+
+# Line length (adjust if you want)
+ColumnLimit: 100
+
+# Don't reorder includes (nice for CP)
+SortIncludes: false
